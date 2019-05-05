@@ -40,7 +40,7 @@ public class Main {
                     String releaseDate = ac.nextLine();
                     System.out.println("Content book:");
                     String content = ac.nextLine();
-                    String addStudent ="insert into book (title,author,releaseDate,content) values('"+title+"','"+author+"','"+releaseDate+"','"+content+"')";
+                    String addStudent ="INSERT INTO book (title,author,releaseDate,content) VALUES ('"+title+"','"+author+"','"+releaseDate+"','"+content+"')";
                     statement.executeUpdate(addStudent);
                     System.out.println("add success");
                     break;
@@ -77,7 +77,7 @@ public class Main {
                     int id = sc.nextInt();
                     System.out.println("Title  book");
                     String name = ac.nextLine();
-                    String query = "update book set title = ? where id = ?";
+                    String query = "UPDATE book SET title = ? WHERE id = ?";
                     PreparedStatement preparedStmt = connection.prepareStatement(query);
                     preparedStmt.setString   (1, name);
                     preparedStmt.setInt(2, id);
