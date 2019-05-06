@@ -36,7 +36,7 @@ public class Main {
             switch(Chon){
                 case 1:{
                     System.out.println("id book");
-                    String id = scanner.nextLine();
+                    int id = scanner.nextInt();
                     System.out.println("title book:");
                     String title = scanner.nextLine();
                     System.out.println("Author book:");
@@ -78,14 +78,15 @@ public class Main {
                     break;
                 }
                 case 5:{
-                    System.out.println("Input ID Update");
-                    int id = scanner.nextInt();
+
                     System.out.println("Name of book");
                     String name = scanner.nextLine();
+                    System.out.println("Input ID Update");
+                    int id = scanner.nextInt();
                     String update = "UPDATE book SET title = ? WHERE id = ?";
                     PreparedStatement preparedStmt = connection.prepareStatement(update);
-                    preparedStmt.setInt   (1, id);
-                    preparedStmt.setString(2, name);
+                    preparedStmt.setString(1, name);
+                    preparedStmt.setInt   (2, id);
                     // execute the java preparedstatement
                     preparedStmt.executeUpdate();
 
