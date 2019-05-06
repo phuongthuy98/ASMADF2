@@ -35,6 +35,8 @@ public class Main {
             while (Chon >=1 && Chon<=8){
             switch(Chon){
                 case 1:{
+                    System.out.println("id book");
+                    String id = scanner.nextLine();
                     System.out.println("title book:");
                     String title = scanner.nextLine();
                     System.out.println("Author book:");
@@ -43,7 +45,7 @@ public class Main {
                     String releaseDate = scanner.nextLine();
                     System.out.println("Content book:");
                     String content = scanner.nextLine();
-                    String addStudent ="INSERT INTO book (title,author,releaseDate,content) VALUES ('"+title+"','"+author+"','"+releaseDate+"','"+content+"')";
+                    String addStudent ="INSERT INTO book (id,title,author,releaseDate,content) VALUES ('"+id+"',' "+title+"','"+author+"','"+releaseDate+"','"+content+"')";
                     statement.executeUpdate(addStudent);
                     System.out.println("add success");
                     break;
@@ -79,7 +81,7 @@ public class Main {
                     System.out.println("Input ID Update");
                     int id = scanner.nextInt();
                     System.out.println("Name of book");
-                    String name = choice.nextLine();
+                    String name = scanner.nextLine();
                     String update = "UPDATE book SET title = ? WHERE id = ?";
                     PreparedStatement preparedStmt = connection.prepareStatement(update);
                     preparedStmt.setInt   (1, id);
